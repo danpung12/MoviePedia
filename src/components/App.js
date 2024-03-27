@@ -1,4 +1,5 @@
-import ReviewList from "./ReviewList"
+import ReviewList from "./ReviewList";
+import ReviewForm from './ReviewForm';
 import { getReviews } from '../api'
 import { useEffect, useState } from "react";
 
@@ -66,6 +67,7 @@ useEffect(() => {
         <button onClick ={BestClick}> 베스트순 </button>
         <button onClick ={NewClick}> 최신순 </button>
       </div>
+      <ReviewForm />
       <ReviewList items={sorted} onDelete={idDelete}/>
       {hasNext && <button disabled={isLoading} onClick={LoadMore}>더 보기</button>}
       {loadError?.message && <span>{loadError.message}</span>}
